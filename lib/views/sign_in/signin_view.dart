@@ -6,7 +6,7 @@ class SignInView extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: [Text("add recipe page")],
+        children: [Text("signin/ signup page")],
       ),
     );
   }
