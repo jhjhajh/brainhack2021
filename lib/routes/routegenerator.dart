@@ -29,8 +29,7 @@ class RouteGenerator {
         return _getPageRoute(
             LayoutView(child: RecipeView(), route: RouteRecipe), settings.name);
       case RouteStart:
-        return _getPageRoute(
-            LayoutView(child: StartView(), route: RouteStart), settings.name);
+        return _getPageRoute(StartView(), settings.name);
       default:
         return _getPageRoute(LayoutView(child: StartView()), RouteStart);
     }
@@ -38,21 +37,22 @@ class RouteGenerator {
 }
 
 PageRoute _getPageRoute(Widget child, String routeName) {
-  return _NoTransitionRoute(child: child, routeName: routeName);
+  return MaterialPageRoute(builder: (_) => child);
+  // _NoTransitionRoute(child: child, routeName: routeName);
   // if we return MaterialPageRoute(builder: (_) => child) instead, the url wont change as we switch views.
 }
 
-class _NoTransitionRoute extends PageRouteBuilder {
-  final Widget child;
-  final String routeName;
-  _NoTransitionRoute({this.child, this.routeName})
-      : super(
-          settings: RouteSettings(name: routeName),
-          pageBuilder: (
-            BuildContext context,
-            Animation<double> animation,
-            Animation<double> secondaryAnimation,
-          ) =>
-              child,
-        );
-}
+// class _NoTransitionRoute extends PageRouteBuilder {
+//   final Widget child;
+//   final String routeName;
+//   _NoTransitionRoute({this.child, this.routeName})
+//       : super(
+//           settings: RouteSettings(name: routeName),
+//           pageBuilder: (
+//             BuildContext context,
+//             Animation<double> animation,
+//             Animation<double> secondaryAnimation,
+//           ) =>
+//               child,
+//         );
+// }

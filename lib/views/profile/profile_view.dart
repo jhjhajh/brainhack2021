@@ -5,11 +5,34 @@ import 'package:flutterwebapp/routes/routes.dart';
 class ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
+    // return SingleChildScrollView(
+    //   child: Column(
+    //     crossAxisAlignment: CrossAxisAlignment.center,
+    //     mainAxisAlignment: MainAxisAlignment.center,
+    //     children: [
+    //       Container(
+    //         height: MediaQuery.of(context).size.height * 0.3,
+    //         // padding: EdgeInsets.only(top: 15, bottom: 20),
+    //         alignment: Alignment.center,
+    //         child: Icon(Icons.portrait),
+    //         // child: Image.asset('assets/images/snapchef.png'),
+    //       ),
+    //       TextIntro(),
+    //       SignInButton(),
+    //     ],
+    //   ),
+    // );
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
+          // SingleChildScrollView(
+          // child: Column(
+          //   crossAxisAlignment: CrossAxisAlignment.center,
+          //   mainAxisAlignment: MainAxisAlignment.center,
+          //   children: [
           Container(
             height: MediaQuery.of(context).size.height * 0.3,
             // padding: EdgeInsets.only(top: 15, bottom: 20),
@@ -19,6 +42,9 @@ class ProfileView extends StatelessWidget {
           ),
           TextIntro(),
           SignInButton(),
+          //   ],
+          // ),
+          // ),
         ],
       ),
     );

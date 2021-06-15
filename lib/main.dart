@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'snapChef',
-      initialRoute: RouteHome,
+      initialRoute: RouteStart,
       navigatorKey: NavigationService.navKey,
       onGenerateRoute: RouteGenerator.generateRoute,
       theme: ThemeData(
