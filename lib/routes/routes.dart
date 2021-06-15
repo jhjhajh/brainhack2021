@@ -4,3 +4,4 @@ const String RouteHome = '/home';
 const String RouteProfile = '/profile';
 const String RouteRecipe = '/recipe';
 const String RouteSignIn = '/signin';
+const String RouteStart = '/start';

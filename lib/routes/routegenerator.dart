@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterwebapp/routes/routes.dart';
+import 'package:flutterwebapp/views/startpage/start_view.dart';
 import 'package:flutterwebapp/views/homepage/home_view.dart';
 import 'package:flutterwebapp/views/layout_view.dart';
 import 'package:flutterwebapp/views/profile/profile_view.dart';
@@ -12,7 +13,7 @@ class RouteGenerator {
       case RouteHome:
         return _getPageRoute(
             LayoutView(
-              child: MyHomePage(),
+              child: HomeView(),
               route: RouteHome,
             ),
             settings.name);
@@ -27,8 +28,11 @@ class RouteGenerator {
       case RouteRecipe:
         return _getPageRoute(
             LayoutView(child: RecipeView(), route: RouteRecipe), settings.name);
+      case RouteStart:
+        return _getPageRoute(
+            LayoutView(child: StartView(), route: RouteStart), settings.name);
       default:
-        return _getPageRoute(LayoutView(child: MyHomePage()), RouteHome);
+        return _getPageRoute(LayoutView(child: StartView()), RouteStart);
     }
   }
 }

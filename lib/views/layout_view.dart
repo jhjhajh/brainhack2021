@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutterwebapp/widgets/navigation_bar/navigation_drawer.dart';
-// import 'package:flutterwebapp/widgets/navigation_bar/navigation_drawer.dart';
+import 'package:flutterwebapp/routes/routes.dart';
+import 'package:flutterwebapp/widgets/bottom_navigationbar/bottom_navigation_view.dart';
+// import 'package:flutterwebapp/widgets/bottom_navigationbar/bottom_navigation_view.dart';
 
 class LayoutView extends StatelessWidget {
   final Widget child;
@@ -10,15 +11,15 @@ class LayoutView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: new Text('Click and Cook!')),
-        drawer: NavigationDrawer(
-          currentRoute: route,
-        ),
-        backgroundColor: Colors.white,
-        body: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[Expanded(child: child)],
-        ));
+      backgroundColor: Colors.white,
+      body: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: <Widget>[
+          Expanded(child: child),
+          BottomNavigator(),
+        ],
+      ),
+    );
   }
 }

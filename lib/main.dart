@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       navigatorKey: NavigationService.navKey,
       onGenerateRoute: RouteGenerator.generateRoute,
       theme: ThemeData(
-          primarySwatch: Colors.blueGrey,
+          primarySwatch: Colors.yellow,
           textTheme: Theme.of(context).textTheme.apply(fontFamily: 'Lato')),
       debugShowCheckedModeBanner: false,
     );

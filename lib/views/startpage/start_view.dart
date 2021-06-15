@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterwebapp/routes/navigation_service.dart';
 import 'package:flutterwebapp/routes/routes.dart';
 
-class ProfileView extends StatelessWidget {
+class StartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -11,11 +11,10 @@ class ProfileView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            height: MediaQuery.of(context).size.height * 0.3,
-            // padding: EdgeInsets.only(top: 15, bottom: 20),
-            alignment: Alignment.center,
-            child: Icon(Icons.portrait),
-            // child: Image.asset('assets/images/snapchef.png'),
+            height: MediaQuery.of(context).size.height * 0.70,
+            padding: EdgeInsets.only(top: 15, bottom: 20),
+            alignment: Alignment.topCenter,
+            child: Image.asset('assets/images/snapchef.png'),
           ),
           TextIntro(),
           SignInButton(),
