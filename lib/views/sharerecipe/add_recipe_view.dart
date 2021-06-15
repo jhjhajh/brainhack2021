@@ -2,14 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutterwebapp/routes/navigation_service.dart';
 import 'package:flutterwebapp/routes/routes.dart';
 
+void navigate(String routeName) {
+  NavigationService.pop();
+  NavigationService.push(routeName);
+}
+
 class AddRecipeView extends StatelessWidget {
   AddRecipeView({this.currentRoute});
   final String currentRoute;
 
-  void navigate(String routeName) {
-    NavigationService.pop();
-    NavigationService.push(routeName);
-  }
+  // void navigate(String routeName) {
+  //   NavigationService.pop();
+  //   NavigationService.push(routeName);
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -56,110 +61,26 @@ class AddRecipeView extends StatelessWidget {
 }
 
 class PostButton extends StatelessWidget {
-  PostButton({this.currentRoute});
-  final String currentRoute;
-  void navigate(String routeName) {
-    NavigationService.pop();
-    NavigationService.push(routeName);
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        IconButton(
-          icon: Icon(
-            Icons.close,
-            color: Colors.orange,
-            size: 40,
-          ),
-          onPressed: () {
-            navigate(RouteHome);
-          },
+    return ElevatedButton(
+      child: Text(
+        'Post',
+        style: TextStyle(
+          fontSize: 20,
+          color: Colors.white,
+          fontFamily: "Lato",
+          fontWeight: FontWeight.bold,
         ),
-        PostButton(),
-      ],
+      ),
+      onPressed: () {
+        NavigationService.push(RouteHome);
+      },
+      style: ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+        primary: Colors.orange,
+        minimumSize: Size(50, 30),
+      ),
     );
   }
 }
-
-// class CancelOrPost extends StatelessWidget {
-//   void navigate(String routeName) {
-//     NavigationService.pop();
-//     NavigationService.push(routeName);
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Row(
-//       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//       children: [
-//         IconButton(
-//           icon: Icon(
-//             Icons.close,
-//             color: Colors.orange,
-//             size: 40,
-//           ),
-//           onPressed: () {
-//             navigate(RouteHome);
-//           },
-//         ),
-//         PostButton(),
-//       ],
-//     );
-//   }
-// }
-
-// class AddRecipeView extends StatelessWidget {
-//   AddRecipeView({this.currentRoute});
-//   final String currentRoute;
-//   void navigate(String routeName) {
-//     NavigationService.pop();
-//     NavigationService.push(routeName);
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return LayoutView(
-//       child: Column(
-//         mainAxisAlignment: MainAxisAlignment.start,
-//         children: [
-//           Text(
-//             'Sign in with Google',
-//             style: TextStyle(
-//               fontSize: 20,
-//               color: Colors.white,
-//               fontFamily: "Lato",
-//               fontWeight: FontWeight.bold,
-//             ),
-//           ),
-//           //cross and post, space between with padding
-//           // Row(
-//           //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//           //   children: [
-//           //     IconButton(
-//           //       icon: Icon(
-//           //         Icons.close,
-//           //         color: Colors.white,
-//           //         size: 40,
-//           //       ),
-//           //       onPressed: () {
-//           //         navigate(RouteHome);
-//           //       },
-//           //     ),
-//           //   ],
-//           // ),
-//           //add picture, title and display placeholder picture and chef name
-//           // Row(children: [Column(), Column()]),
-//           // Container(),
-//           // Container(),
-//           // Row(), //for grabfood icon and the url in grabfood beside it
-//           //   ],
-//           // ),
-//           // ),
-//         ],
-//       ),
-//     );
-//   }
-// }
