@@ -11,16 +11,10 @@ class StartView extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          // SingleChildScrollView(
-          // child: Column(
-          //   crossAxisAlignment: CrossAxisAlignment.center,
-          //   mainAxisAlignment: MainAxisAlignment.center,
-          //   children: [
           Container(
             height: MediaQuery.of(context).size.height * 0.7,
             padding: EdgeInsets.only(top: 15, bottom: 20),
             alignment: Alignment.center,
-            // child: Icon(Icons.portrait),
             child: Image.asset('assets/images/snapchef.png'),
           ),
           TextIntro(),
@@ -40,7 +34,12 @@ class SignInButton extends StatelessWidget {
     return ElevatedButton(
       child: Text(
         'Sign in with Google',
-        style: TextStyle(fontSize: 20, color: Colors.white, fontFamily: "Lato"),
+        style: TextStyle(
+          fontSize: 20,
+          color: Colors.white,
+          fontFamily: "Lato",
+          fontWeight: FontWeight.bold,
+        ),
       ),
       onPressed: () {
         NavigationService.push(RouteSignIn);

@@ -4,7 +4,7 @@ import 'package:flutterwebapp/views/startpage/start_view.dart';
 import 'package:flutterwebapp/views/homepage/home_view.dart';
 import 'package:flutterwebapp/views/layout_view.dart';
 import 'package:flutterwebapp/views/profile/profile_view.dart';
-import 'package:flutterwebapp/views/recipe/recipe_view.dart';
+import 'package:flutterwebapp/views/sharerecipe/add_recipe_view.dart';
 import 'package:flutterwebapp/views/sign_in/signin_view.dart';
 
 class RouteGenerator {
@@ -27,7 +27,8 @@ class RouteGenerator {
         return _getPageRoute(LayoutView(child: SignInView()), settings.name);
       case RouteRecipe:
         return _getPageRoute(
-            LayoutView(child: RecipeView(), route: RouteRecipe), settings.name);
+            LayoutView(child: AddRecipeView(), route: RouteRecipe),
+            settings.name);
       case RouteStart:
         return _getPageRoute(StartView(), settings.name);
       default:
